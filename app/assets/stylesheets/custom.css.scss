@@ -2,3 +2,15 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+#logo {
+    Float: left;
+    font-size: 1.7en;
+    color: #000;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+
+.jumbotron {
+    background-image: asset-url('dicas-criar-ambiente-estudo-noticias.jpg');
+}

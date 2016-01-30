@@ -1,4 +1,4 @@
-<%# What is this file is show in any page view of the application. %>
+<%# What is in this file is show in any page view of the application. %>
 
 <!DOCTYPE html>
 <html>
@@ -16,7 +16,13 @@
     </li>
   </ul>
  <%end%>
-<%= yield %>
+ 
+<%= render 'layouts/navigation' %>
+  <div class="container">
+    <%= yield %>
+  </div>
+
+    <%= render 'layouts/footer' %>
 
 </body>
 </html>
