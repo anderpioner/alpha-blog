@@ -16,20 +16,29 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-      
+    @article = Article.find(params[:id])
   end
   
   def show
     @article = Article.find(params[:id])
-    
   end
   
   def update
-      
+    @article = Article.find(params[:id])  
+    if @article.update(article_params)
+      flash[:notice] = "Article was succesfuly updated" #it only works if you add a code on the view page, in this case aplication view, which is a file that is shown on all the app pages
+      redirect_to article_path(@article) #article_path depends on the path on the rake routes command
+    else
+      render 'edit'
+    end      
   end
   
   def destroy
       
+  end
+  
+  def index
+      @articles=Article.all
   end
   
   private
