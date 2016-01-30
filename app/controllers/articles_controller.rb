@@ -10,7 +10,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      flash[:notice] = "Article was succesfuly created" #it only works if you add a code on the view page, in this case aplication view, which is a file that is shown on all the app pages
+       flash[:success] = "Article was succesfuly created" #it only works if you add a code on the view page, in this case aplication view, which is a file that is shown on all the app pages
       redirect_to article_path(@article) #article_path depends on the path on the rake routes command
     else
       render 'new'
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
   def update
 
     if @article.update(article_params)
-      flash[:notice] = "Article was succesfuly updated" #it only works if you add a code on the view page, in this case aplication view, which is a file that is shown on all the app pages
+       flash[:success] = "Article was succesfuly updated" #it only works if you add a code on the view page, in this case aplication view, which is a file that is shown on all the app pages
       redirect_to article_path(@article) #article_path depends on the path on the rake routes command
     else
       render 'edit'
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
   def destroy
     
     @article.destroy
-    flash[:notice] = "Article was succesfuly deleted"
+     flash[:danger] = "Article was succesfuly deleted"
     redirect_to articles_path
   end
   
