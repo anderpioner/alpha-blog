@@ -1,3 +1,5 @@
+<%# What is this file is show in any page view of the application. %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +9,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+ <% flash.each do |name, msg| %>
+  <ul>
+    <li>
+      <%= msg %>
+    </li>
+  </ul>
+ <%end%>
 <%= yield %>
 
 </body>
