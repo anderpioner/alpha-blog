@@ -8,7 +8,10 @@ class ArticlesController < ApplicationController
   end
   
   def create
+    
     @article = Article.new(article_params)
+    #debugger
+    @article.user = User.first
     if @article.save
        flash[:success] = "Article was succesfuly created" #it only works if you add a code on the view page, in this case aplication view, which is a file that is shown on all the app pages
       redirect_to article_path(@article) #article_path depends on the path on the rake routes command
